@@ -1,5 +1,5 @@
-use chrono::{ DateTime, Utc, Duration };
 use crate::game::GameState;
+use chrono::{DateTime, Duration, Utc};
 
 pub struct TimeManager;
 

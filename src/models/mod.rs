@@ -1,5 +1,5 @@
-pub mod station;
 pub mod crew;
+pub mod station;
 
-pub use station::Station;
 pub use crew::CrewMember;
+pub use station::Station;
