@@ -10,5 +10,10 @@ impl TimeManager {
         elapsed.min(Duration::hours(24))
     }
 
-    pub fn apply_time_changes(game_state: &mut GameState, elapsed: Duration) {}
+    pub fn apply_time_changes(game_state: &mut GameState, elapsed: Duration) {
+        game_state
+            .resources
+            .apply_consumption(elapsed.num_minutes(), 3);
+        game_state.last_update = Utc::now();
+    }
 }

@@ -41,6 +41,8 @@ fn main() {
     let elapsed = TimeManager::calculate_elapsed_time(game_state.last_update);
     println!("Tiempo transcurrido: {} minutos", elapsed.num_minutes());
 
+    TimeManager::apply_time_changes(&mut game_state, elapsed);
+
     match save_manager.save_game(&game_state) {
         Ok(_) => println!("\nPartida guardada correctamente"),
         Err(e) => println!("\nError al guardar la partida: {}", e),
